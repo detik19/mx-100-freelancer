@@ -1,0 +1,53 @@
+
+entity Freelancer {
+    registrationDate Instant required
+    price BigDecimal required min(0)
+    location String
+    overview String
+}
+
+entity Certification {
+	certificationName String
+    provider String
+    description String
+    dateEarned Instant
+    urlLink String
+    
+}
+enum JobStatus{
+	PUBLISHED,
+    DRAFT
+}
+entity Job {
+	description String
+    amount BigDecimal
+    expectedDuration String
+  	jobStatus JobStatus
+  
+}
+
+entity Proposal {
+	proposal_time Instant
+    amount BigDecimal
+    currentStatus Integer
+}
+
+entity Employer {
+	registrationDate Integer
+    location String
+    
+}
+
+entity Company {
+	companyName String
+    companyLocation String
+}
+relationship ManyToOne {
+	Job{employer_id} to Employer
+    Employer{company_id} to Company
+    Proposal{freelancer_id} to Freelancer
+    Proposal{job_id} to Job
+}
+relationship OneToMany {
+	Freelancer{certificationList} to Certification{freelancer_id} 
+}
