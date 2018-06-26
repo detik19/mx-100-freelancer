@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.mx100.freelancer.domain.UserRequest;
-import com.mx100.freelancer.domain.Users;
+import com.mx100.freelancer.domains.UserRequest;
+import com.mx100.freelancer.domains.Users;
 import com.mx100.freelancer.services.UsersService;
 
 

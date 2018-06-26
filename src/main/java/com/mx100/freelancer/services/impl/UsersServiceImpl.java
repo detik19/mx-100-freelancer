@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.mx100.freelancer.domain.UserRequest;
-import com.mx100.freelancer.domain.Users;
+import com.mx100.freelancer.domains.UserRequest;
+import com.mx100.freelancer.domains.Users;
 import com.mx100.freelancer.repositories.UsersRepository;
 import com.mx100.freelancer.services.UsersService;
 

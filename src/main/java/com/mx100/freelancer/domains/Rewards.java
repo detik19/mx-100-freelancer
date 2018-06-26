@@ -1,4 +1,4 @@
-package com.mx100.freelancer.domain;
+package com.mx100.freelancer.domains;
 
 import java.io.Serializable;
 
@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.mx100.freelancer.domains.enums.FreelancerGrade;
 
 @Entity
 @Table(name = "REWARDS")

@@ -1,4 +1,4 @@
-package com.mx100.freelancer.domain;
+package com.mx100.freelancer.domains;
 
 public class UserTokenState {
     private String access_token;

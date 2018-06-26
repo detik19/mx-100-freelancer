@@ -4,7 +4,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.mx100.freelancer.domain.Users;
+import com.mx100.freelancer.domains.Users;
 
 
 @Transactional

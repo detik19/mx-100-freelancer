@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mx100.freelancer.domain.Jobs;
-import com.mx100.freelancer.domain.JobsStatus;
+import com.mx100.freelancer.domains.Jobs;
+import com.mx100.freelancer.domains.enums.JobsStatus;
 import com.mx100.freelancer.services.JobsService;
 import com.mx100.freelancer.utils.HeaderUtil;
 

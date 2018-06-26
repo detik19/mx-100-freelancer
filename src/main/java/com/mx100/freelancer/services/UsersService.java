@@ -2,8 +2,8 @@ package com.mx100.freelancer.services;
 
 import java.util.List;
 
-import com.mx100.freelancer.domain.UserRequest;
-import com.mx100.freelancer.domain.Users;
+import com.mx100.freelancer.domains.UserRequest;
+import com.mx100.freelancer.domains.Users;
 
 
 

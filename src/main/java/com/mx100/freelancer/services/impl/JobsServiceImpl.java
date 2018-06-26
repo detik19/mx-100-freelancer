@@ -10,10 +10,10 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import com.mx100.freelancer.domain.Employer;
-import com.mx100.freelancer.domain.Jobs;
-import com.mx100.freelancer.domain.JobsStatus;
-import com.mx100.freelancer.domain.Users;
+import com.mx100.freelancer.domains.Employer;
+import com.mx100.freelancer.domains.Jobs;
+import com.mx100.freelancer.domains.Users;
+import com.mx100.freelancer.domains.enums.JobsStatus;
 import com.mx100.freelancer.repositories.EmployerRepository;
 import com.mx100.freelancer.repositories.JobsRepository;
 import com.mx100.freelancer.services.JobsService;

@@ -2,8 +2,8 @@ package com.mx100.freelancer.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.mx100.freelancer.domain.Employer;
-import com.mx100.freelancer.domain.Users;
+import com.mx100.freelancer.domains.Employer;
+import com.mx100.freelancer.domains.Users;
 
 public interface EmployerRepository extends CrudRepository<Employer, Long>{
 

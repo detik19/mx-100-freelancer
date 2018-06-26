@@ -1,4 +1,4 @@
-package com.mx100.freelancer.domain;
+package com.mx100.freelancer.domains;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -13,6 +13,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.mx100.freelancer.domains.enums.ProposalStatus;
 
 @Entity
 @Table(name ="PROPOSALS")

@@ -12,7 +12,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.mx100.freelancer.domain.Users;
+import com.mx100.freelancer.domains.Users;
 import com.mx100.freelancer.repositories.UsersRepository;
 
 @Service

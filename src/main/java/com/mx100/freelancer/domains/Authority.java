@@ -1,4 +1,4 @@
-package com.mx100.freelancer.domain;
+package com.mx100.freelancer.domains;
 
 
 import javax.persistence.Column;
@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
+
+import com.mx100.freelancer.domains.enums.UsersRoleName;
 
 @Entity
 @Table(name="AUTHORITY")

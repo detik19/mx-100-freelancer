@@ -2,8 +2,8 @@ package com.mx100.freelancer.services;
 
 import java.util.List;
 
-import com.mx100.freelancer.domain.Jobs;
-import com.mx100.freelancer.domain.JobsStatus;
+import com.mx100.freelancer.domains.Jobs;
+import com.mx100.freelancer.domains.enums.JobsStatus;
 
 public interface JobsService {
 	public List<Jobs> getAllJobs();

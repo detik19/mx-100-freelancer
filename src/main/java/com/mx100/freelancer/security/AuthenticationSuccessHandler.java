@@ -16,8 +16,8 @@ import org.springframework.security.web.authentication.SimpleUrlAuthenticationSu
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mx100.freelancer.domain.UserTokenState;
-import com.mx100.freelancer.domain.Users;
+import com.mx100.freelancer.domains.UserTokenState;
+import com.mx100.freelancer.domains.Users;
 
 
 

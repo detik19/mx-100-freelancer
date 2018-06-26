@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mx100.freelancer.domain.Jobs;
-import com.mx100.freelancer.domain.Proposals;
+import com.mx100.freelancer.domains.Jobs;
+import com.mx100.freelancer.domains.Proposals;
 import com.mx100.freelancer.utils.HeaderUtil;
 
 @RestController

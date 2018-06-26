@@ -7,7 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mx100.freelancer.domain.Authority;
+import com.mx100.freelancer.domains.Authority;
 import com.mx100.freelancer.repositories.AuthorityRepository;
 import com.mx100.freelancer.services.AuthorityService;
 

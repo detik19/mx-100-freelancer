@@ -1,4 +1,4 @@
-package com.mx100.freelancer.domain;
+package com.mx100.freelancer.domains;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -18,6 +18,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.mx100.freelancer.domains.enums.JobsStatus;
 
 @Entity
 @Table(name="JOBS")
