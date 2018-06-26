@@ -1,17 +1,24 @@
 package com.mx100.freelancer.domain;
 
-import java.io.Serializable;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
 
-
+@Entity
+@Table(name="AUTHORITY")
 public class Authority implements GrantedAuthority {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8416836223302715484L;
 
 	@Id
 	@Column(name ="id")
@@ -24,8 +31,7 @@ public class Authority implements GrantedAuthority {
 
 	@Override
 	public String getAuthority() {
-		// TODO Auto-generated method stub
-		return null;
+		return usersRoleName.name();
 	}
 	
 

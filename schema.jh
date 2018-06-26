@@ -6,6 +6,12 @@ entity Freelancer {
     overview String
 }
 
+entity TechnicalSkill {
+	skillName String
+}
+//entity FreelancerSkill{
+
+//}
 entity Certification {
 	certificationName String
     provider String
@@ -13,6 +19,11 @@ entity Certification {
     dateEarned Instant
     urlLink String
     
+}
+
+entity Rewards {
+	grade String
+    point Integer
 }
 enum JobStatus{
 	PUBLISHED,
@@ -27,7 +38,7 @@ entity Job {
 }
 
 entity Proposal {
-	proposal_time Instant
+	proposalTime Instant
     amount BigDecimal
     currentStatus Integer
 }
@@ -42,11 +53,20 @@ entity Company {
 	companyName String
     companyLocation String
 }
+
+relationship OneToOne {
+	Freelancer{rewards_id} to Rewards
+}
 relationship ManyToOne {
 	Job{employer_id} to Employer
     Employer{company_id} to Company
     Proposal{freelancer_id} to Freelancer
     Proposal{job_id} to Job
+  }
+
+relationship ManyToMany {
+  Freelancer{technicalSkills} to TechnicalSkill
+  Job{skillsRequired} to TechnicalSkill
 }
 relationship OneToMany {
 	Freelancer{certificationList} to Certification{freelancer_id} 

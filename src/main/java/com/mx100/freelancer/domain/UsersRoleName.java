@@ -1,8 +1,8 @@
 package com.mx100.freelancer.domain;
 
 public enum UsersRoleName {
-	FREELANCER,
-	EMPLOYER
+	ROLE_FREELANCER,
+	ROLE_EMPLOYER
 	
 
 }
