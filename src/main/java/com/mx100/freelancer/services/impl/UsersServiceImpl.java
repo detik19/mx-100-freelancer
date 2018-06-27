@@ -52,7 +52,7 @@ public class UsersServiceImpl implements UsersService {
 	public Users save(UserRequest userRequest) {
 		Users users=new Users();
 		users.setUserName(userRequest.getUsername());
-		users.setPassword(passwordEncoder.encode(userRequest.getUsername()));
+		users.setPassword(passwordEncoder.encode(userRequest.getPassword()));
 		users.setFirstName(userRequest.getFirstname());
 		users.setLastName(userRequest.getLastname());
 		List<Authority> auth = authService.findByname(userRequest.getUsersRoleName());

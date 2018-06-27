@@ -32,11 +32,6 @@ public class JobsController {
 	@Autowired
 	private JobsService jobsService;
 	
-	@PutMapping("/em/jobs")
-	public ResponseEntity<Jobs> updateJob(@RequestBody Jobs jobs) throws URISyntaxException {
-		log.debug("REST request to update Job : {}", jobs);
-		return null;
-	}
 	
 	
 	/**

@@ -2,16 +2,19 @@ package com.mx100.freelancer.services.impl;
 
 import java.util.List;
 
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Service;
 
 import com.mx100.freelancer.domains.Rewards;
 import com.mx100.freelancer.domains.enums.FreelancerGrade;
 import com.mx100.freelancer.repositories.RewardsRepository;
 import com.mx100.freelancer.services.ResetMonthlyService;
 
+@Service
 public class ResetMonthlyServiceImpl implements ResetMonthlyService{
 
 	@Autowired

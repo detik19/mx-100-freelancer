@@ -44,15 +44,20 @@ public class ProposalsController {
 				.headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, proposal.getId().toString()))
 				.body(result);
 	}
-	
+	/**
+	 * get All Proposal submitted by a Freelancer
+	 * @return
+	 * @throws URISyntaxException
+	 */
 	@GetMapping("/fr/proposals")
 	public List<Proposals> getAllMyProposals() throws URISyntaxException {
 		return proposalService.findAllUsersProposal();
 
 	}
 	@GetMapping("/em/proposals")
-	public List<Jobs> getAllProposalsForJobs(@RequestParam("jobsId") String jobsId) throws URISyntaxException {
-		return null;
+	public List<Proposals> getAllProposalsForJobs(@RequestParam("jobsId") String jobsId) throws URISyntaxException {
+		return proposalService.findAllProposalForAJobs(Long.getLong(jobsId));
+		
 
 	}
 

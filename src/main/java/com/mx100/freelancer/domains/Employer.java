@@ -1,6 +1,7 @@
 package com.mx100.freelancer.domains;
 
 import java.io.Serializable;
+import java.time.Instant;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,7 +31,7 @@ public class Employer implements Serializable {
     private Users users;
     
 	@Column(name ="registration_date")
-	private Integer registrationDate;
+	private Instant registrationDate;
 	
 	@Column(name = "location")
 	private String location;
@@ -42,10 +43,12 @@ public class Employer implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Integer getRegistrationDate() {
+	
+	
+	public Instant getRegistrationDate() {
 		return registrationDate;
 	}
-	public void setRegistrationDate(Integer registrationDate) {
+	public void setRegistrationDate(Instant registrationDate) {
 		this.registrationDate = registrationDate;
 	}
 	public String getLocation() {
