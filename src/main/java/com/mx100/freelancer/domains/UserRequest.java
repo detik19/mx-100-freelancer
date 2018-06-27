@@ -1,5 +1,7 @@
 package com.mx100.freelancer.domains;
 
+import com.mx100.freelancer.domains.enums.UsersRoleName;
+
 public class UserRequest {
 	private Long id;
 
@@ -10,6 +12,10 @@ public class UserRequest {
 	private String firstname;
 
 	private String lastname;
+	
+	private UsersRoleName usersRoleName;
+	
+	
 
 
 	public String getUsername() {
@@ -51,4 +57,14 @@ public class UserRequest {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	public UsersRoleName getUsersRoleName() {
+		return usersRoleName;
+	}
+
+	public void setUsersRoleName(UsersRoleName usersRoleName) {
+		this.usersRoleName = usersRoleName;
+	}
+	
+	
 }

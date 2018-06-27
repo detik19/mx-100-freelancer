@@ -11,6 +11,6 @@ public interface JobsService {
 	public List<Jobs> getAllMyJobsByStatus(JobsStatus jobsStatus);
 
 	public Jobs createJobs(Jobs jobs);
-	public Jobs publishJobs();
+	public Jobs publishJobs(Jobs jobs);
 
 }

@@ -60,6 +60,12 @@ public class Employer implements Serializable {
 	public void setCompany(Company company) {
 		this.company = company;
 	}
+	public Users getUsers() {
+		return users;
+	}
+	public void setUsers(Users users) {
+		this.users = users;
+	}
 	
 	
 }

@@ -41,6 +41,8 @@ public class JobsController {
 	
 	/**
 	 * 
+	 * Create Jobs
+	 * 
 	 * @param jobs
 	 * @return
 	 * @throws URISyntaxException
@@ -54,7 +56,27 @@ public class JobsController {
 	            .body(result);
 	}
 	
-
+	/**
+	 * Publish job
+	 * 
+	 * @param jobs
+	 * @return
+	 * @throws URISyntaxException
+	 */
+	@PutMapping("/em/jobs")
+	public ResponseEntity<Jobs> publishJob(@RequestBody Jobs jobs) throws URISyntaxException {
+        log.debug("REST request to publish Job : {}", jobs);
+       Jobs result=jobsService.publishJobs(jobs);
+	    return ResponseEntity.ok()
+	            .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, jobs.getId().toString()))
+	            .body(result);
+	}
+	
+	/**
+	 * get All Jobs submitted by a employee based on jobsStatus
+	 * @param status
+	 * @return
+	 */
 	@GetMapping("/em/jobs")
 	public List<Jobs> getAllMyJobs(@RequestParam("status") JobsStatus statusSubmittedJobs) {
 		log.debug("REST request to get all Jobs created by employee");
@@ -64,7 +86,11 @@ public class JobsController {
 		return jobsList;
 	}
 	
-	
+	/**
+	 * get All Jobs submitted by a employee
+	 * @param status
+	 * @return
+	 */
 	@GetMapping("/fr/jobs")
 	public List<Jobs> getAllJobsPublished() {
 		log.debug("REST request to get all Jobs publsihed");

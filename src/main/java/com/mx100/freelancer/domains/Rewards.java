@@ -9,6 +9,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.mx100.freelancer.domains.enums.FreelancerGrade;
@@ -26,12 +28,25 @@ public class Rewards implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
+//    @OneToOne
+//    @JoinColumn(unique = true)	
+//    private Freelancer freelancer;
+    
 	@Enumerated( EnumType.STRING)
 	@Column(name="grade")
 	private FreelancerGrade grade;
 	
 	@Column(name="point")
 	private Integer point;
+
+	
+//	public Freelancer getFreelancer() {
+//		return freelancer;
+//	}
+//
+//	public void setFreelancer(Freelancer freelancer) {
+//		this.freelancer = freelancer;
+//	}
 
 	public Long getId() {
 		return id;

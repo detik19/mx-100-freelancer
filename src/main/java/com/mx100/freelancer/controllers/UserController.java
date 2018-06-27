@@ -35,23 +35,23 @@ public class UserController {
   private UsersService usersService;
 
 
-  @RequestMapping(method = GET, value = "/user/{userId}")
-  public Users loadById(@PathVariable Long userId) {
-    return this.usersService.findById(userId);
-  }
+//  @RequestMapping(method = GET, value = "/user/{userId}")
+//  public Users loadById(@PathVariable Long userId) {
+//    return this.usersService.findById(userId);
+//  }
+//
+//  @RequestMapping(method = GET, value = "/user/all")
+//  public List<Users> loadAll() {
+//    return this.usersService.findAll();
+//  }
 
-  @RequestMapping(method = GET, value = "/user/all")
-  public List<Users> loadAll() {
-    return this.usersService.findAll();
-  }
-
-  @RequestMapping(method = GET, value = "/user/reset-credentials")
-  public ResponseEntity<Map> resetCredentials() {
-    this.usersService.resetCredentials();
-    Map<String, String> result = new HashMap<>();
-    result.put("result", "success");
-    return ResponseEntity.accepted().body(result);
-  }
+//  @RequestMapping(method = GET, value = "/user/reset-credentials")
+//  public ResponseEntity<Map> resetCredentials() {
+//    this.usersService.resetCredentials();
+//    Map<String, String> result = new HashMap<>();
+//    result.put("result", "success");
+//    return ResponseEntity.accepted().body(result);
+//  }
 
 
   @RequestMapping(method = POST, value = "/signup")
@@ -68,14 +68,14 @@ public class UserController {
     return new ResponseEntity<Users>(users, HttpStatus.CREATED);
   }
 
-  /*
-   * We are not using userService.findByUsername here(we could), so it is good that we are making
-   * sure that the user has role "ROLE_USER" to access this endpoint.
-   */
-  @RequestMapping("/whoami")
-  @PreAuthorize("hasRole('ROLE_EMPLOYER')")
-  public Users user() {
-    return (Users) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-  }
+//  /*
+//   * We are not using userService.findByUsername here(we could), so it is good that we are making
+//   * sure that the user has role "ROLE_USER" to access this endpoint.
+//   */
+//  @RequestMapping("/whoami")
+//  @PreAuthorize("hasRole('ROLE_EMPLOYER')")
+//  public Users user() {
+//    return (Users) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//  }
 
 }

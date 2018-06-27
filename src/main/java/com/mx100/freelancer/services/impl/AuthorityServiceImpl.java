@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mx100.freelancer.domains.Authority;
+import com.mx100.freelancer.domains.enums.UsersRoleName;
 import com.mx100.freelancer.repositories.AuthorityRepository;
 import com.mx100.freelancer.services.AuthorityService;
 
@@ -27,11 +28,11 @@ public class AuthorityServiceImpl implements AuthorityService {
 	}
 
 	@Override
-	public List<Authority> findByname(String name) {
+	public List<Authority> findByname(UsersRoleName name) {
 		Authority auth = this.authorityRepository.findByUsersRoleName(name);
 		List<Authority> auths = new ArrayList<>();
 		auths.add(auth);
-		return auths;		
+		return auths;	
 	}
 
 }

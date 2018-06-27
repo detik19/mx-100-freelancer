@@ -2,6 +2,7 @@ package com.mx100.freelancer.services.impl;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +15,7 @@ import com.mx100.freelancer.domains.Employer;
 import com.mx100.freelancer.domains.Jobs;
 import com.mx100.freelancer.domains.Users;
 import com.mx100.freelancer.domains.enums.JobsStatus;
+import com.mx100.freelancer.exceptions.BusinessException;
 import com.mx100.freelancer.repositories.EmployerRepository;
 import com.mx100.freelancer.repositories.JobsRepository;
 import com.mx100.freelancer.services.JobsService;
@@ -52,16 +54,23 @@ public class JobsServiceImpl implements JobsService{
 	}
 
 	@Override
-	public Jobs publishJobs() {
-		// TODO Auto-generated method stub
-		return null;
+	public Jobs publishJobs(Jobs jobs) {
+		Users users=getPrincipal();
+        Employer employer=employerRepository.findOneByUsers(users);
+
+		Jobs j= jobsRepository.findOneByIdAndEmployerAndJobStatus(jobs.getId(), employer, JobsStatus.DRAFT);
+		if(j==null)
+			throw new BusinessException("jobs id not found");
+		j.setJobStatus(JobsStatus.PUBLISHED);
+		
+		return jobsRepository.save(j);
 	}
 
 	@Override
 	public List<Jobs> getAllMyJobsByStatus(JobsStatus jobsStatus) {
 		Users users=getPrincipal();
         Employer employer=employerRepository.findOneByUsers(users);
-        List<Jobs> jobsList=jobsRepository.findAllByJobsStatusAndEmployer(jobsStatus, employer);
+        List<Jobs> jobsList=jobsRepository.findAllByJobStatusAndEmployer(jobsStatus, employer);
 		return jobsList;
 	}
 	

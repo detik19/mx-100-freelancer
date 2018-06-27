@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.mx100.freelancer.domains.Authority;
 import com.mx100.freelancer.domains.UserRequest;
 import com.mx100.freelancer.domains.Users;
 import com.mx100.freelancer.repositories.UsersRepository;
+import com.mx100.freelancer.services.AuthorityService;
 import com.mx100.freelancer.services.UsersService;
 
 @Service
@@ -20,6 +22,8 @@ public class UsersServiceImpl implements UsersService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
+	@Autowired
+	private AuthorityService authService;
 	@Override
 	public void resetCredentials() {
 		// TODO Auto-generated method stub
@@ -51,8 +55,8 @@ public class UsersServiceImpl implements UsersService {
 		users.setPassword(passwordEncoder.encode(userRequest.getUsername()));
 		users.setFirstName(userRequest.getFirstname());
 		users.setLastName(userRequest.getLastname());
-//	    List<Authority> auth = authService.findByname("ROLE_USER");
-//	    user.setAuthorities(auth);
+		List<Authority> auth = authService.findByname(userRequest.getUsersRoleName());
+		users.setAuthorities(auth);
 		usersRepository.save(users);
 		return users;
 	}
