@@ -50,11 +50,11 @@ public class Freelancer implements Serializable {
     @JsonIgnore
     private Set<Certification> certificationLists = new HashSet<>();
     
-    @ManyToMany
-    @JoinTable(name = "freelancer_technical_skills",
-               joinColumns = @JoinColumn(name="freelancers_id", referencedColumnName="id"),
-               inverseJoinColumns = @JoinColumn(name="technical_skills_id", referencedColumnName="id"))
-    private Set<TechnicalSkill> technicalSkills = new HashSet<>();
+//    @ManyToMany
+//    @JoinTable(name = "freelancer_technical_skills",
+//               joinColumns = @JoinColumn(name="freelancers_id", referencedColumnName="id"),
+//               inverseJoinColumns = @JoinColumn(name="technical_skills_id", referencedColumnName="id"))
+//    private Set<TechnicalSkill> technicalSkills = new HashSet<>();
 
 	public Long getId() {
 		return id;
@@ -105,13 +105,13 @@ public class Freelancer implements Serializable {
 		this.rewards = rewards;
 	}
 
-	public Set<TechnicalSkill> getTechnicalSkills() {
-		return technicalSkills;
-	}
-
-	public void setTechnicalSkills(Set<TechnicalSkill> technicalSkills) {
-		this.technicalSkills = technicalSkills;
-	}
+//	public Set<TechnicalSkill> getTechnicalSkills() {
+//		return technicalSkills;
+//	}
+//
+//	public void setTechnicalSkills(Set<TechnicalSkill> technicalSkills) {
+//		this.technicalSkills = technicalSkills;
+//	}
     
     
 

@@ -46,11 +46,11 @@ public class Jobs implements Serializable{
 	@ManyToOne
 	private Employer employer;
 	
-    @ManyToMany
-    @JoinTable(name = "job_skills_required",
-               joinColumns = @JoinColumn(name="jobs_id", referencedColumnName="id"),
-               inverseJoinColumns = @JoinColumn(name="skills_requireds_id", referencedColumnName="id"))
-    private Set<TechnicalSkill> skillsRequireds = new HashSet<>();
+//    @ManyToMany
+//    @JoinTable(name = "job_skills_required",
+//               joinColumns = @JoinColumn(name="jobs_id", referencedColumnName="id"),
+//               inverseJoinColumns = @JoinColumn(name="skills_requireds_id", referencedColumnName="id"))
+//    private Set<TechnicalSkill> skillsRequireds = new HashSet<>();
     
     @Column(name = "expected_duration")
     private String expectedDuration;
@@ -103,13 +103,13 @@ public class Jobs implements Serializable{
 		this.employer = employer;
 	}
 
-	public Set<TechnicalSkill> getSkillsRequireds() {
-		return skillsRequireds;
-	}
-
-	public void setSkillsRequireds(Set<TechnicalSkill> skillsRequireds) {
-		this.skillsRequireds = skillsRequireds;
-	}
+//	public Set<TechnicalSkill> getSkillsRequireds() {
+//		return skillsRequireds;
+//	}
+//
+//	public void setSkillsRequireds(Set<TechnicalSkill> skillsRequireds) {
+//		this.skillsRequireds = skillsRequireds;
+//	}
 
 	public String getExpectedDuration() {
 		return expectedDuration;
@@ -122,9 +122,11 @@ public class Jobs implements Serializable{
 	@Override
 	public String toString() {
 		return "Jobs [id=" + id + ", title=" + title + ", description=" + description + ", budgetAmount=" + budgetAmount
-				+ ", jobStatus=" + jobStatus + ", employer=" + employer + ", skillsRequireds=" + skillsRequireds
-				+ ", expectedDuration=" + expectedDuration + "]";
+				+ ", jobStatus=" + jobStatus + ", employer=" + employer + ", expectedDuration=" + expectedDuration
+				+ "]";
 	}
+
+	
 
     
 
